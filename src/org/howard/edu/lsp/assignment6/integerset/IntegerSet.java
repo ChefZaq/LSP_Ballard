@@ -90,8 +90,8 @@ public class IntegerSet
      */
     public boolean contains(int value) 
     {
-        boolean ans = arraySet.contains(value) ;
-        return ans;
+    	 boolean ans = arraySet.contains(value) ;
+	     return ans;
     }
 
     /**
@@ -156,15 +156,27 @@ public class IntegerSet
      */
     public void remove(int item) 
     {
-        if(length()== 0)
-        {
-        	// do nothing
-        }
-        else
-        {
-            int num = arraySet.indexOf(item);
-            arraySet.remove(num);
-        }
+    	if(contains(item))
+    	{
+    		if(length()== 0)
+            {
+            	// do nothing
+            }
+            else
+            {
+                int num = arraySet.indexOf(item);
+                if (num < 0)
+                {
+                	
+                }
+                else
+                {
+                	arraySet.remove(num);
+                }
+            }
+    	}
+    	
+        
     }//  Throws a IntegerSetException of the set is empty
 
     /**
